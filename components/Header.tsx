@@ -1,6 +1,6 @@
 "use client";
 
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -112,6 +112,14 @@ const Header = () => {
           ))}
         </nav>
         <div className=" flex items-center gap-2">
+          <SignedOut>
+            <Link
+              href={"/sign-in"}
+              className=" bg-[coral] rounded-md py-1 px-2 text-xs text-white"
+            >
+              Sign In
+            </Link>
+          </SignedOut>
           <UserButton />
 
           {/* mobile view */}
