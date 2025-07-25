@@ -1,7 +1,11 @@
+import HeroSection from "@/components/HeroSection";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome to DPF</h1>
+    <div className="relative h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <HeroSection />
+      </div>
     </div>
   );
 }
