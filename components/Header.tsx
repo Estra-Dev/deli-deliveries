@@ -143,9 +143,8 @@ const Header = () => {
                 {navigation.map((item) => (
                   <div key={item.name} className=" w-full">
                     {item.dropDown ? (
-                      <div className=" space-y-2 w-full ">
-                        <Button
-                          variant={"ghost"}
+                      <div className=" w-full ">
+                        <div
                           onClick={() =>
                             setMobileDropDownOpen(
                               mobileDropDownOpen === item.name
@@ -153,7 +152,7 @@ const Header = () => {
                                 : item.name
                             )
                           }
-                          className=" w-full flex justify-between text-gray-800 text-sm font-medium py-2 h-auto"
+                          className=" w-full flex justify-between text-[coral] text-sm font-medium py-2 h-auto"
                         >
                           {item.name}
                           <ChevronDown
@@ -163,9 +162,9 @@ const Header = () => {
                                 : ""
                             }`}
                           />
-                        </Button>
+                        </div>
                         {mobileDropDownOpen === item.name && (
-                          <div className=" space-y-1 pl-4">
+                          <div className=" space-y-1 pl-4 flex flex-col">
                             {item.dropDown.map((dropDownItem) => (
                               <Link
                                 href={dropDownItem.href}
@@ -174,7 +173,7 @@ const Header = () => {
                                   setIsOpen(false);
                                   setMobileDropDownOpen(null);
                                 }}
-                                className=" text-sm text-muted-foreground"
+                                className=" text-sm text-muted-foreground transition-colors hover:text-primary py-2 block"
                               >
                                 {dropDownItem.name}
                               </Link>
@@ -193,6 +192,18 @@ const Header = () => {
                     )}
                   </div>
                 ))}
+                <SignedOut>
+                  <Link
+                    onClick={() => {
+                      setIsOpen(false);
+                      setMobileDropDownOpen(null);
+                    }}
+                    href={"/sign-in"}
+                    className=" bg-[coral] rounded-md py-1 px-2 text-xs text-white"
+                  >
+                    Get Started
+                  </Link>
+                </SignedOut>
               </div>
             </SheetContent>
           </Sheet>
