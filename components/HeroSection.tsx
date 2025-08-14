@@ -17,12 +17,22 @@ const HeroSection = () => {
   return (
     <div className=" w-full relative h-[90vh] mb-6">
       {/* animated image */}
-      <div className=" absolute -z-50 lg:right-3 right-0 top-2 w-xl p-1.5">
+      <div className=" hidden md:block absolute -z-50 lg:right-3 top-2 w-2xl p-1.5">
+        <Image
+          src={"/trk-dlv-removebg-preview.png"}
+          width={500}
+          height={500}
+          alt="phone"
+          className=" w-full h-full object-cover animate-pulse"
+        />
+      </div>
+      <div className=" md:hidden absolute -z-50 right-0 top-2 w-2xl p-1.5">
         <Image
           src={"/dsp2-removebg-preview.png"}
           width={500}
           height={500}
           alt="phone"
+          className=" animate-pulse"
         />
       </div>
       <div className=" lg:hidden absolute top-2 left-0 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/80 h-screen w-full -z-20"></div>
