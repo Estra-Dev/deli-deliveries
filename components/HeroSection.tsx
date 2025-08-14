@@ -1,5 +1,6 @@
 "use client";
 
+import { LucideArrowRight } from "lucide-react";
 import Image from "next/image";
 // import React, { useEffect, useState } from "react";
 import { useTypewriter } from "react-simple-typewriter";
@@ -14,9 +15,9 @@ const HeroSection = () => {
   });
 
   return (
-    <div className=" w-full relative h-[90vh]">
+    <div className=" w-full relative h-[90vh] mb-6">
       {/* animated image */}
-      <div className=" absolute -z-50 lg:right-3 top-2 w-xl p-1.5">
+      <div className=" absolute -z-50 lg:right-3 right-0 top-2 w-xl p-1.5">
         <Image
           src={"/dsp2-removebg-preview.png"}
           width={500}
@@ -34,7 +35,7 @@ const HeroSection = () => {
         <p className=" text-xs font-bold text-[coral]/85 italic mt-4">
           Watch Your Delivery Live from your Device...
         </p>
-        <div className=" flex justify-center items-center gap-6 mt-36">
+        <div className=" flex justify-center items-center gap-2 md:gap-6 mt-36">
           <div className=" w-3xl flex flex-col gap-1 justify-center items-center">
             <div className=" w-full overflow-hidden rounded-full bg-green-400">
               <Image
@@ -45,8 +46,11 @@ const HeroSection = () => {
                 className=" object-contain"
               />
             </div>
-            <p className=" text-gray-700 text-sm font-medium">Search Rider</p>
+            <p className=" text-gray-700 text-xs md:text-sm font-medium">
+              Search Rider
+            </p>
           </div>
+          <LucideArrowRight className=" w-[100px] h-[100px] text-[coral] font-extrabold" />
           <div className=" w-3xl flex flex-col gap-1 justify-center items-center">
             <div className=" w-full overflow-hidden rounded-full bg-red-500">
               <Image
@@ -57,8 +61,11 @@ const HeroSection = () => {
                 className=" object-contain"
               />
             </div>
-            <p className=" text-gray-700 text-sm font-medium">Book Rider</p>
+            <p className=" text-gray-700 text-xs md:text-sm font-medium">
+              Book Rider
+            </p>
           </div>
+          <LucideArrowRight className=" w-[100px] h-[100px] text-[coral] font-extrabold" />
           <div className=" w-3xl flex flex-col gap-1 justify-center items-center">
             <div className=" w-full overflow-hidden rounded-full bg-yellow-400">
               <Image
@@ -69,7 +76,9 @@ const HeroSection = () => {
                 className=" object-contain"
               />
             </div>
-            <p className=" text-gray-700 text-sm font-medium">Monitor Rider</p>
+            <p className=" text-gray-700 text-xs md:text-sm font-medium">
+              Monitor Rider
+            </p>
           </div>
         </div>
       </div>

@@ -51,7 +51,7 @@ const Header = () => {
   );
 
   return (
-    <header className=" z-50 w-full shadow-sm shadow-gray-200/30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 left-0">
+    <header className=" z-50 w-full shadow-sm shadow-gray-200/30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 fixed top-0 left-0">
       <div className=" container justify-between items-center flex py-3 px-3 md:px-[5%]">
         {/* logo */}
         <div className="overflow-hidden rounded-full">
