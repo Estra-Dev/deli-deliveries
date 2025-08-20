@@ -14,8 +14,11 @@ import {
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import { ChevronDown, Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+
   const getUsers = async () => {
     try {
       const res = await fetch("http://localhost:5000/");
@@ -31,7 +34,8 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: "Track Order", href: "/track-order" },
+    { name: "Track Order", href: "/track" },
+    { name: "Place Order", href: "/place-order" },
 
     {
       name: "Become Part",
@@ -85,7 +89,7 @@ const Header = () => {
                         <DropdownMenuItem asChild>
                           <Link
                             href={dropItem.href}
-                            className=" cursor-pointer"
+                            className=" cursor-pointer text-[coral]"
                           >
                             {dropItem.name}
                           </Link>
@@ -98,14 +102,21 @@ const Header = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <div className=" text-[13px] hidden text-gray-900 font-semi-bold md:flex items-center p-2 ">
+                <div className=" text-gray-900 text-[13px] hidden  font-semi-bold md:flex items-center p-2 relative">
                   {/* menu */}
                   <Link
                     href={item.href}
-                    className=" hover:text-[coral] transition-all ease-in-out duration-150"
+                    className=" hover:text-[coral] transition-all ease-in-out duration-150 "
                   >
                     <p>{item.name}</p>
                   </Link>
+                  <div
+                    className={`${
+                      pathname === item.href
+                        ? " scale-x-100 w-full"
+                        : " scale-x-0"
+                    } absolute left-0 bottom-0 bg-[coral]  h-[2px] transition-all ease-in-out duration-700`}
+                  ></div>
                 </div>
               )}
             </div>

@@ -4,16 +4,25 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
 const BecomeOne = () => {
   const become = [
-    { name: "Become a Rider", image: "/bcm1.webp" },
-    { name: "Become a Courier Company", image: "/courier.jpg" },
-    { name: "Or remain Our Valuable Customer", image: "/cust.png" },
+    { name: "Become a Rider", image: "/bcm1.webp", link: "/become-rider" },
+    {
+      name: "Become a Courier Company",
+      image: "/courier.jpg",
+      link: "/become-courier-company",
+    },
+    {
+      name: "Or remain Our Valuable Customer",
+      image: "/cust.png",
+      link: "/become-customer",
+    },
   ];
 
   return (
-    <div className=" max-w-5xl w-full mx-auto my-10 p-6 bg-white shadow-md rounded-lg">
+    <div className=" max-w-5xl w-full mx-auto my-10 p-6 bg-white">
       <h1 className=" font-bold text-center text-gray-800 mb-2 text-xl md:text-3xl">
         Become a <span className=" text-[coral]"> Delivery Partner</span>
       </h1>
@@ -41,17 +50,19 @@ const BecomeOne = () => {
                   width={500}
                   height={400}
                 />
-                <h2 className="mt-2 text-lg font-semibold text-[coral]">
+                <h2 className="mt-2 text-xl font-semibold text-gray-800">
                   {item.name}
                 </h2>
+                <Link
+                  href={item.link}
+                  className="my-4 px-2 py-1 text-xs bg-[coral] text-white rounded-md"
+                >
+                  Get Started
+                </Link>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-
-        <button className="mt-4 px-2 py-2 text-sm bg-[coral] text-white rounded-md">
-          Get Started
-        </button>
       </div>
     </div>
   );

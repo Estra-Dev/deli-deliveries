@@ -1,5 +1,8 @@
+"use client";
+
 import { Clock, LocateFixedIcon, Star } from "lucide-react";
 import React from "react";
+import { motion } from "framer-motion";
 
 const WhyChooseUs = () => {
   const choose = [
@@ -34,9 +37,13 @@ const WhyChooseUs = () => {
         {choose.map((item, index) => {
           const Icon = item.icon;
           return (
-            <div
-              className=" flex items-start gap-3 max-w-2xl w-full"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.3 }}
               key={index}
+              className=" flex items-start gap-3 max-w-2xl w-full p-1.5 rounded-md shadow-md"
             >
               <div className=" bg-[coral]/15 px-4 py-4 rounded-md">
                 <Icon className=" text-[coral] font-bold text-2xl" />
@@ -45,7 +52,7 @@ const WhyChooseUs = () => {
                 <h2 className=" font-bold text-lg md:text-xl">{item.name}</h2>
                 <p className=" text-sm ">{item.description}</p>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

@@ -1,4 +1,5 @@
 import BecomeOne from "@/components/BecomeOne";
+import Ending from "@/components/Ending";
 import HeroSection from "@/components/HeroSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 
@@ -9,6 +10,7 @@ export default function Home() {
         <HeroSection />
         <BecomeOne />
         <WhyChooseUs />
+        <Ending />
       </div>
     </div>
   );
